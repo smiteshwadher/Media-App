@@ -1,0 +1,108 @@
+.cardClass
+{
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 1rem;
+    position: relative;
+    height: 450px;
+
+}
+
+.cardClassForMovieDetails
+{
+    background: #B02723;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    width: -webkit-fill-available;
+    border : 5px solid white;
+    margin-bottom: 0px;
+    margin-top: 10px
+}
+
+.cardTitleStyle
+{
+    color: white;
+    font-weight: bolder;
+    font-size: 24px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.mediaType
+{
+    font-size:16px;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+.styleForStraightLine
+{
+    width: 2px;
+    height: 18px;
+    background: white;
+    margin-top : 2px;
+}
+
+.synopsisStyle
+{
+    font-size:13px;
+    color: white;
+    font-weight: 600;
+    text-align: justify;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.marginClass
+{
+    margin-left: 10px;
+}
+
+.imgClass2
+{
+    width: 155px;
+    height: 220px;
+    padding: 0;
+    border-radius: 12px
+}
+
+.imgClass3
+{
+  width: 155px;
+}
+
+.fixed
+{
+  position: relative;
+  overflow: hidden;
+  overflow-x: scroll !important;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.textStyleForMovieName
+{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.divStyleForList
+{
+    display:inline-flex;
+    background: transparent;
+    height: 275px
+}
+
+.divStyleForBackIcon
+{
+    height: 30px;
+    width: 30px;
+    margin-top: 10px
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    
+      <ion-row *ngIf="this.movieListObject">
+        <ion-col size="8">
+          <ion-searchbar  [(ngModel)]="searchTerm" (ionInput)="setFilteredItems($event)" inputmode="text" (keypress)="eventHandler($event.keyCode)" (ionCancel)="searchBarCancelClicked()" placeholder="Search by name"></ion-searchbar>
+        </ion-col>
+        <ion-col size="4" style="margin: auto;">
+          <button ion-button class="sort-btn" (click)="sortByClicked()">          
+            Sort By
+            <ion-icon name="arrow-down" style="color:#4a2eb9;margin-left: 2px;" *ngIf="this.sortApplied && this.sortFilter == 1"></ion-icon>
+            <ion-icon name="arrow-up" style="color:#4a2eb9;margin-left: 2px;" *ngIf="this.sortApplied && this.sortFilter == 2"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="padding: 0px;">
+    <ion-col size="12" size-md="8" size-lg="6" offset-lg="3"  style="text-align: center;padding: 0px;">
+      <div *ngIf="this.movieListObject">
+        <ion-card *ngFor="let movie of this.movieListObject">
+          <ion-row>
+            <ion-col style="background: red" size="12" (click)="openMovieDetailsPage(movie.id)">
+              <div>
+                <img src="{{this.globalData.movieDBImageURL}}{{movie.poster_path}}" alt="" onError="this.src='assets/images/stillLoading.png';">
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+
+      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+      <div *ngIf="!this.movieListObject" class="divStyleForNoMovies">
+        No Data For Movies Found.
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

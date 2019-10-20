@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    
+      <ion-row>
+          <ion-col col-12>
+            <div style="width: fit-content" (click)="goBack()">
+              <ion-icon class="divStyleForBackIcon" src="/assets/images/back.svg" ></ion-icon>
+            </div>
+          </ion-col>
+      </ion-row>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row style="padding: 0px;">
+    <ion-col size="12" size-md="8" size-lg="6" offset-lg="3"  style="text-align: center;padding: 0px;">
+
+      <ion-card @slidelefttitle class="cardClassForMovieDetails">
+        <ion-row>
+          <ion-col size="12">
+            <div>
+              <img src="{{this.globalData.movieDBImageURL+this.movieDetail.backdrop_path}}" alt="" onError="this.src='assets/images/stillLoading.png';">
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-card  @slidelefttitle class="cardClassForMovieDetails">
+        <ion-row>
+          <ion-col size="12">
+            <ion-card-title class="cardTitleStyle">{{this.movieDetail.title}}</ion-card-title>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="this.movieDetail.runtime">
+          <ion-col size="12">
+            <div *ngIf="this.movieDetail.runtime && this.movieDetail.runtime != null" class="mediaType marginClass">
+              {{this.convertedToDecimalHour}}
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="this.movieDetail.genres != null">
+          <ion-col size="12">
+            <div *ngIf="this.movieDetail.genres.length > 0" class="mediaType marginClass">
+              {{this.convertedGenreList}}
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="!this.movieDetail.overview == ''">
+          <ion-col size="12">
+            <div class="synopsisStyle">
+              <span class="mediaType">Synopsis : </span>{{this.movieDetail.overview}}
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <div class="mediaType" style="margin-left:10px;">
+              Cast :
+            </div>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="12">
+            <div class="fixed">
+              <ion-list class="divStyleForList">
+
+                <div style="width:fit-content;margin: 10px" *ngFor="let cast of this.movieCastDetail ; let i = index">
+                  <div style="width:fit-content">
+                    <div class="imgClass3" (click)="callCastDetails(cast.id)">
+                      <img class="imgClass2" src="{{this.globalData.movieDBImageURL}}{{cast.profile_path}}" alt="" onError="this.src='assets/images/stillLoading.png';">
+                    </div>
+                
+                    <div class="textStyleForMovieName">
+                      {{cast.name}}
+                    </div>
+                  </div>
+                </div>
+
+              </ion-list>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

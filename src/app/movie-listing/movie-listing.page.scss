@@ -1,0 +1,45 @@
+.divStyleForNoMovies
+{
+    text-align: center;
+    margin-top: 200px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.searchbar-input.sc-ion-searchbar-md 
+{
+    background: inherit;
+    padding: 0px;
+}
+
+.sort-btn
+{
+    background: #fff;
+    color: black;
+    margin: 0px;
+    height: 45px;
+    float: right;
+    text-transform: none;
+    font-size: 16px;
+    width: 100%;
+    border: 2px solid red
+}
+
+.sort-btn:active
+{
+    background-color: white !important;
+    color: #b4b4b4 !important;
+}
+
+.button-ios 
+{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.divClassForMovieTitle
+{
+    font-size: 14px;
+    color: black;
+    font-weight: bolder;
+    text-align: center
+}
